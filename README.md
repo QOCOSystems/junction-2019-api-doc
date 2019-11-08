@@ -38,27 +38,150 @@ The data presented here is generated test data.
 
 ### Baggage
 
+A baggage is the single luggage or other cargo that the passenger takes with them on the flight.
+Baggage information is returned byt a GET call:
+
+```
+/dev/baggage
+```
+Without identifiers, the API return all the baggage.
+
+#### Properties
 
 
-#### All
+Parameters:
+
+| Attribute  | Type     | Description                                                  |
+| :--------- | :------- | :---------------------------------------------------------   |
+| baggageId  | String   |  Baggage ID, unique identifier                               |
+| customerId | String   |  Baggage owners ID                                           | 
+| rushbag    | String   |  Y or N, Baggage needs to hurry to a connecting flight       |
+| special    | String   |  Baggage type, one or multiple (e.g. ALH), see codes below   |
+| weight     | Number   |  Weight of the baggage                                       |
+
+Special codes:
+
+| Code  | Name                       | Information                                                  |
+| :---- | :------------------------- | :---------------------------------------------------------   |
+| N     | Normal                     |  Standard luggage                                            |
+| A     | Animal                     |  Live animal, requires heated cargo                          | 
+| L     | Long baggage               |  Baggage that is longer than usual, e.g. ski bag             |
+| H     | Heavy baggage              |  Baggage that is heavier than 23 kg                          |
+| C     | Special condition          |  Baggage that requires specific temperature, e.g. medication |
+| T     | Toxic chemicals            |  Larger amount of possibly hazardous chemicals               |
+| W     | Weapons or ammunition      |  Weapons or hunting gear, e.g. ammunition                    |
+
 
 #### baggageId
 
+```
+/dev/baggage?baggageId=123-456-789
+```
+Get information of a baggage.
+
 #### customerId
+
+```
+/dev/baggage?customerId=123-456-789
+```
+Get all baggage of customer
+
 
 ### Customers
 
+Customer is the one passenger traveling on the flight. 
+The API has stored the relevant information of the passenger regarding baggage operations.
+
+```
+/dev/customers
+```
+
+Without parameters the API returns list of all customers.
+
+#### Properties
+
+
+Parameters:
+
+| Attribute  | Type     | Description                                                  |
+| :--------- | :------- | :---------------------------------------------------------   |
+| customerId | String   |  Baggage owners ID, unique identifer                         | 
+| name       | String   |  Full name of customer                                       |
+| email      | String   |  Email address of the customer                               |
+| phone      | String   |  Phone number of the customer                                |
+| target     | String   |  Destination airport                                         |
+
+Airport codes follow standard IATA codes:
+https://en.wikipedia.org/wiki/Category:Lists_of_airports_by_IATA_code
+
+
+#### customerId
+
+```
+/dev/customers?customerId=123-456-789
+```
+
+Get information of a customer (passenger).
 
 ### Events
 
+The baggage events contain all the checkpoints of the baggage from the check in to the destination baggage claim.
 
+
+```
+/dev/events
+```
+
+
+#### Properties
+
+
+Parameters:
+
+| Attribute          | Type     | Description                                                    |
+| :----------------  | :------- | :------------------------------------------------------------  |
+| eventId            | String   |  Baggage events ID, unique identifer                           | 
+| baggageId          | String   |  Baggage ID                                                    |
+| airport            | String   |  Airport of the event, three-letter IATA code                  |
+| timestamp          | String   |  Timestamp of the event in UTC                                 |
+| type               | String   |  Event type, one per event, see codes below                                   |
+| flightNumber       | String   |  Number of flight: operator prefix + route suffix, e.g. AY123  |
+
+Airport codes follow standard IATA codes:
+https://en.wikipedia.org/wiki/Category:Lists_of_airports_by_IATA_code
+
+Event types:
+
+| Type          | Description                                     |
+| :------------ | :--------------------------------------------   |
+| CHECKED_IN    | Baggage registered at the check-in counter      |
+| LOADED        | Baggage loaded on to the aircraft               | 
+| UNLOADED      | Baggage loaded off the aircraft                 |
+| DAMAGED       | Baggage has been found damaged                  |
+| CLAIMED       | Baggage taken from baggage claim                |
+| MISSING       | Baggage marked missing                          |
+
+#### eventId
+
+```
+/dev/events?eventId=123-456-789
+```
+
+Get a specific event.
+
+
+#### baggageId
+
+```
+/dev/events?baggageId=123-456-789
+```
+Get all events for a baggage.
 
 ## Support
 
 Contact us on Discord for further information.
 
 ... Or visit us at QOCO Booth!
-
 
 
 
