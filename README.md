@@ -3,7 +3,7 @@
 
 ### Table of Contents
 
-- [Junction Baggage API](#Junction Baggage API)
+- [Junction Baggage API](#Junction-Baggage-API)
     - [Table of Contents](#table-of-contents)
   - [Business case](#business-case)
   - [Development](#development)
@@ -39,12 +39,12 @@ The data presented here is generated test data.
 ### Baggage
 
 A baggage is the single luggage or other cargo that the passenger takes with them on the flight.
-Baggage information is returned byt a GET call:
+Baggage information is returned by a GET call:
 
 ```
 /dev/baggage
 ```
-Without identifiers, the API return all the baggage.
+Without identifiers, the API return list of all baggage.
 
 #### Properties
 
@@ -109,7 +109,7 @@ Parameters:
 | name       | String   |  Full name of customer                                       |
 | email      | String   |  Email address of the customer                               |
 | phone      | String   |  Phone number of the customer                                |
-| target     | String   |  Destination airport                                         |
+| target     | String   |  Destination airport, three letter IATA code                 |
 
 Airport codes follow standard IATA codes:
 https://en.wikipedia.org/wiki/Category:Lists_of_airports_by_IATA_code
@@ -144,7 +144,7 @@ Parameters:
 | baggageId          | String   |  Baggage ID                                                    |
 | airport            | String   |  Airport of the event, three-letter IATA code                  |
 | timestamp          | String   |  Timestamp of the event in UTC                                 |
-| type               | String   |  Event type, one per event, see codes below                                   |
+| type               | String   |  Event type, one per event, see codes below                    |
 | flightNumber       | String   |  Number of flight: operator prefix + route suffix, e.g. AY123  |
 
 Airport codes follow standard IATA codes:
@@ -157,7 +157,7 @@ Event types:
 | CHECKED_IN    | Baggage registered at the check-in counter      |
 | LOADED        | Baggage loaded on to the aircraft               | 
 | UNLOADED      | Baggage loaded off the aircraft                 |
-| DAMAGED       | Baggage has been found damaged                  |
+| DAMAGED       | Baggage is found damaged                        |
 | CLAIMED       | Baggage taken from baggage claim                |
 | MISSING       | Baggage marked missing                          |
 
