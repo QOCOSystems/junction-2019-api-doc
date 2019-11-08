@@ -109,7 +109,7 @@ Parameters:
 | name       | String   |  Full name of customer                                       |
 | email      | String   |  Email address of the customer                               |
 | phone      | String   |  Phone number of the customer                                |
-| target     | String   |  Destination airport, three letter IATA code                 |
+| target     | String   |  Destination airport, three-letter IATA code                 |
 
 Airport codes follow standard IATA codes:
 https://en.wikipedia.org/wiki/Category:Lists_of_airports_by_IATA_code
