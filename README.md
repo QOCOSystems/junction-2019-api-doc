@@ -180,6 +180,3 @@ Contact us on Discord for further information.
 
 ... Or visit us at QOCO Booth!
 
-## Known limitations
-
-A list of known limitations or issues. This might not be necessary as issues could be tracked using other issue tracking methods, but if there is something that should be mentioned in README already, it could be added here.
