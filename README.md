@@ -25,12 +25,13 @@ https://2019.hackjunction.com/challenges/smooth-travels
 
 ## API Description
 
-The Bagage API consists of three APIs:
+The Baggage API consists of three APIs:
 - Baggage
 - Customers
 - Events
 
-The data presented here is generated test data.
+The data presented here is generated test data that mimics the logic of baggage operations.
+
 
 ### Prerequisites
 
@@ -183,8 +184,3 @@ Contact us on Discord for further information.
 
 ... Or visit us at QOCO Booth!
 
-
-
-## Known limitations
-
-A list of known limitations or issues. This might not be necessary as issues could be tracked using other issue tracking methods, but if there is something that should be mentioned in README already, it could be added here.
