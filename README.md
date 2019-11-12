@@ -6,7 +6,6 @@
     - [Table of Contents](#table-of-contents)
   - [Business case](#business-case)
   - [API Description](#api-description)
-    - [Prerequisites](#prerequisites)
     - [Baggage](#baggage)
       - [Properties](#properties)
       - [baggageId](#baggageid)
@@ -19,7 +18,6 @@
       - [eventId](#eventid)
       - [baggageId](#baggageid-1)
   - [Support](#support)
-  - [Known limitations](#known-limitations)
 
 ## Business case
 
@@ -28,7 +26,12 @@ https://2019.hackjunction.com/challenges/smooth-travels
 
 ## API Description
 
-The Bagage API consists of three APIs:
+The API url is: https://junction.dev.qoco.fi/api. The authentication is managed with an API key, add it to `x-api-key` header.
+For example:
+
+`curl -X GET -H 'x-apiKey: <API_KEY_HERE>' 'https://junction.dev.qoco.fi/api'`
+
+The Baggage API consists of three APIs:
 
 - Baggage
 - Customers
@@ -36,15 +39,13 @@ The Bagage API consists of three APIs:
 
 The data presented here is generated test data.
 
-### Prerequisites
-
 ### Baggage
 
 A baggage is the single luggage or other cargo that the passenger takes with them on the flight.
 Baggage information is returned by a GET call:
 
 ```
-/dev/baggage
+GET /baggage
 ```
 
 Without identifiers, the API return list of all baggage.
@@ -75,19 +76,19 @@ Special codes:
 
 #### baggageId
 
-```
-/dev/baggage?baggageId=123-456-789
-```
+Get baggage by baggage id
 
-Get information of a baggage.
+```
+GET /baggage?baggageId=123-456-789
+```
 
 #### customerId
 
-```
-/dev/baggage?customerId=123-456-789
-```
+Get baggages by customer id
 
-Get all baggage of customer
+```
+GET /baggage?customerId=123-456-789
+```
 
 ### Customers
 
@@ -95,7 +96,7 @@ Customer is the one passenger traveling on the flight.
 The API has stored the relevant information of the passenger regarding baggage operations.
 
 ```
-/dev/customers
+GET /customers
 ```
 
 Without parameters the API returns list of all customers.
@@ -117,18 +118,18 @@ https://en.wikipedia.org/wiki/Category:Lists_of_airports_by_IATA_code
 
 #### customerId
 
-```
-/dev/customers?customerId=123-456-789
-```
+Get customer by id
 
-Get information of a customer (passenger).
+```
+GET /customers?customerId=123-456-789
+```
 
 ### Events
 
 The baggage events contain all the checkpoints of the baggage from the check in to the destination baggage claim.
 
 ```
-/dev/events
+GET /events
 ```
 
 #### Properties
@@ -160,19 +161,19 @@ Event types:
 
 #### eventId
 
-```
-/dev/events?eventId=123-456-789
-```
+Get event by id
 
-Get a specific event.
+```
+GET /events?eventId=123-456-789
+```
 
 #### baggageId
 
-```
-/dev/events?baggageId=123-456-789
-```
+Get events by baggageId
 
-Get all events for a baggage.
+```
+GET /events?baggageId=123-456-789
+```
 
 ## Support
 
@@ -180,6 +181,4 @@ Contact us on Discord for further information.
 
 ... Or visit us at QOCO Booth!
 
-## Known limitations
-
-A list of known limitations or issues. This might not be necessary as issues could be tracked using other issue tracking methods, but if there is something that should be mentioned in README already, it could be added here.
+<img src="https://www.qoco.aero/wp-content/uploads/2018/02/QOCO_logo_green_RGB_h62.png" alt="QOCO Logo" />
