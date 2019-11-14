@@ -153,6 +153,8 @@ Parameters:
 Airport codes follow standard IATA codes:
 https://en.wikipedia.org/wiki/Category:Lists_of_airports_by_IATA_code
 
+For MISSING events the airport code is where the baggage was first noticed missing.
+
 Event types:
 
 | Type       | Description                                |
