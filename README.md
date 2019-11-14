@@ -29,7 +29,7 @@ https://2019.hackjunction.com/challenges/smooth-travels
 The API url is: https://junction.dev.qoco.fi/api. The authentication is managed with an API key, add it to `x-api-key` header.
 For example:
 
-`curl -X GET -H 'x-apiKey: <API_KEY_HERE>' 'https://junction.dev.qoco.fi/api'`
+`curl -X GET -H 'x-apiKey: <API_KEY_HERE>' 'https://junction.dev.qoco.fi/api/ping'`
 
 The Baggage API consists of three APIs:
 
