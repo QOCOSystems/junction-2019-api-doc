@@ -15,8 +15,6 @@
       - [customerId](#customerid-1)
     - [Events](#events)
       - [Properties](#properties-2)
-      - [eventId](#eventid)
-      - [baggageId](#baggageid-1)
   - [Support](#support)
 
 ## Business case
@@ -29,7 +27,7 @@ https://2019.hackjunction.com/challenges/smooth-travels
 The API url is: https://junction.dev.qoco.fi/api. The authentication is managed with an API key, add it to `x-api-key` header.
 For example:
 
-`curl -X GET -H 'x-apiKey: <API_KEY_HERE>' 'https://junction.dev.qoco.fi/api/ping'`
+`curl -X GET -H 'x-api-key: <API_KEY_HERE>' 'https://junction.dev.qoco.fi/api/ping'`
 
 The Baggage API consists of three APIs:
 
@@ -141,14 +139,13 @@ Baggage IDs are available in the baggage GET call.
 
 Parameters:
 
-| Attribute    | Type   | Description                                                  |
-| :----------- | :----- | :----------------------------------------------------------- |
-| eventId      | String | Baggage events ID, unique identifer                          |
-| baggageId    | String | Baggage ID                                                   |
-| airport      | String | Airport of the event, three-letter IATA code                 |
-| timestamp    | String | Timestamp of the event in UTC                                |
-| type         | String | Event type, one per event, see codes below                   |
-| flightNumber | String | Number of flight: operator prefix + route suffix, e.g. AY123 |
+| Attribute | Type   | Description                                  |
+| :-------- | :----- | :------------------------------------------- |
+| eventId   | String | Baggage events ID, unique identifer          |
+| baggageId | String | Baggage ID                                   |
+| airport   | String | Airport of the event, three-letter IATA code |
+| timestamp | String | Timestamp of the event in UTC                |
+| type      | String | Event type, one per event, see codes below   |
 
 Airport codes follow standard IATA codes:
 https://en.wikipedia.org/wiki/Category:Lists_of_airports_by_IATA_code
@@ -165,15 +162,6 @@ Event types:
 | DAMAGED    | Baggage is found damaged                   |
 | CLAIMED    | Baggage taken from baggage claim           |
 | MISSING    | Baggage marked missing                     |
-
-#### eventId
-
-Get event by id
-
-```
-GET /events/{baggageId}?eventId=123-456-789
-```
-Retrieves a single event for a baggage.
 
 ## Support
 
