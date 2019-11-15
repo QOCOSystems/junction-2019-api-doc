@@ -37,7 +37,6 @@ The Baggage API consists of three APIs:
 
 The data presented here is generated test data that mimics the logic of baggage operations.
 
-
 ### Baggage
 
 A baggage is the single luggage or other cargo that the passenger takes with them on the flight.
@@ -51,7 +50,7 @@ Without identifiers, the API return list of all baggage.
 
 #### Properties
 
-Parameters:
+Attributes:
 
 | Attribute  | Type   | Description                                               |
 | :--------- | :----- | :-------------------------------------------------------- |
@@ -102,7 +101,7 @@ Without parameters the API returns list of all customers.
 
 #### Properties
 
-Parameters:
+Attributes:
 
 | Attribute  | Type   | Description                                 |
 | :--------- | :----- | :------------------------------------------ |
@@ -134,10 +133,9 @@ GET /events/{baggageId}
 API call requires baggage ID as identifier. This call returns all events for a baggage.
 Baggage IDs are available in the baggage GET call.
 
-
 #### Properties
 
-Parameters:
+Attributes:
 
 | Attribute | Type   | Description                                  |
 | :-------- | :----- | :------------------------------------------- |
